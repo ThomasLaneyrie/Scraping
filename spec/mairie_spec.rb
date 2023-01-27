@@ -16,5 +16,10 @@ describe "get_townhall_email" do
   it "must return an e-mail adress" do
     expect(get_townhall_email("https://www.annuaire-des-mairies.com/95/la-roche-guyon.html")).to eq("mairie.larocheguyon@wanadoo.fr")
   end
+
+  # describe "get_townhall_urls" do
+  #   it "with all department of vald'oise, it must return an array" do
+  #     expect((get_townhall_email("https://www.annuaire-des-mairies.com/val-d-oise.html")).class).to eq("Array")
+  #   end
 end
 

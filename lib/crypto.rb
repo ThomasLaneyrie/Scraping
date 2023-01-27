@@ -42,7 +42,14 @@ def perform
   puts array_crypto
 end
 
+perform
 
+
+
+
+
+
+# Version plus condensée à regarder 
 # def crypto(page)
 #   array_name = Array.new
 #   array_price = Array.new
@@ -70,5 +77,3 @@ end
 #   array_crypto = crypto(page)
 #   puts array_crypto
 # end
-
-# perform

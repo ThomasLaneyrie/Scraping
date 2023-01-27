@@ -38,7 +38,7 @@ def perform
   puts array_sortie
 end
 
-# perform
+perform
 
 
 

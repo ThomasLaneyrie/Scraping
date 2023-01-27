@@ -1,13 +1,13 @@
 require 'nokogiri' 
 require 'open-uri'
 
-def open_nokogiri(url)                    # Entrée : une URL / Sortie : un doc Nokogiri
+def open_nokogiri(url)                   # Entrée : une URL / Sortie : un doc Nokogiri
   Nokogiri::HTML(URI.open(url))   
 end
 
 def deputes_email(url_depute)            # Entrée : une URL / Sortie : un e-mail de député
   page_depute = open_nokogiri(url_depute)
-  page_depute.xpath('//*[text()[contains(., "@")]]').text   
+  email = (page_depute.xpath('//*[text()[contains(., "@")]]').text)[1..]  
 end
 
 def internet_webpage_deputes(url_assemblee_nationale)      # Entrée : l'URL avec tous les députés de France / Sortie : liste d'adresse url de chaque député
@@ -36,7 +36,9 @@ def internet_webpage_deputes(url_assemblee_nationale)      # Entrée : l'URL ave
   return array_all_deputes   # Renvoi un array avec 1 hash/député contenant : prenom, nom, email.
 end
 
-url_assemblee_nationale = "https://www2.assemblee-nationale.fr/deputes/liste/alphabetique"
-puts internet_webpage_deputes(url_assemblee_nationale)
+def perform
+  url_assemblee_nationale = "https://www2.assemblee-nationale.fr/deputes/liste/alphabetique"
+  puts internet_webpage_deputes(url_assemblee_nationale)
+end
 
-
+perform
